@@ -1,0 +1,13 @@
+/*
+This is an example of an external stylesheet
+CIS 2888
+*/
+.login {
+   border: 3px solid blue;
+   }
+
+#title {
+   font: 36px "Arial";
+   text-align: center;
+ }
+}

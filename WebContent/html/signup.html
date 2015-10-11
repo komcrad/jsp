@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Signup</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
+</head>
+<body>
+<form action="signup" method="post">
+
+	First Name*: <input name="firstName" type="text" required><br>
+	Last Name*: <input name="lastName" type="text" required><br>
+	Password*: <input name="password" type="password" required><br>
+	Street Address: <input name="streetAddress" type="text"><br>
+	Apt Number: <input name="aptNumber" type="text"><br>
+	City: <input name="city" type="text"><br>
+	State: <input name="state" type="text"><br>
+	Zip Code: <input name="zipCode" type="text"><br>
+	Email Address*: <input name="email" type="email" ><br>
+	Sex*:
+	<label>Male</label><input name="sex" type="radio" value="male" required>
+	<label>Female</label><input name="sex" type="radio" value="female"><br>
+	Interests*: 
+	Hiking <input name="hiking" type="checkbox" value="hiking">
+	Running <input name="running" type="checkbox" value="running">
+	Reading <input name="reading" type="checkbox" value="reading">
+	Sleeping <input name="sleeping" type="checkbox" value="sleeping">
+	Programming <input name="programming" type="checkbox" value="programming"><br>
+	<input type="submit" value="Create Account" id='submit'>
+</form>
+</body>
+</html>
