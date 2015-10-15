@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.jsp.PageContext;
 
+import ninja.konrad.model.Car;
 import ninja.konrad.model.Cars;
 import ninja.konrad.model.Database;
 
@@ -32,10 +34,13 @@ public class login extends HttpServlet {
 		String password = request.getParameter("password");
 		if (Database.getUser(email) != null) {
 			HashMap<String, String> user = Database.getUser(email);
-			user.put("cars", Functions.getCarTableForUser(user));
+			//user.put("cars", Functions.getCarTableForUser(user));
+			HashMap<String, Car[]> cars =  new HashMap<String, Car[]>();
+			cars.put("cars", Cars.getInventory(Integer.parseInt(Database.getUser(email).get("userID"))));
 			if (user.get("password").equals(password)) {
 				HttpSession session = request.getSession(true);
 				session.setAttribute("UserInfo", user);
+				session.setAttribute("Cars", cars);
 				session.setMaxInactiveInterval(60* 5);
 				request.getRequestDispatcher("/UserInfo").forward(request, response);
 			} else {
