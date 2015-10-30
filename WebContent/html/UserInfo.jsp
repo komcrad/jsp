@@ -9,18 +9,18 @@
 </head>
 <body>
 Here are your cars<br><br>
-User ID: ${UserInfo.userID}<br>
-First Name: ${UserInfo.firstName}<br>
-Last Name: ${UserInfo.lastName}<br> 
-Password: ${UserInfo.password}<br> 
-Street Address: ${UserInfo.streetAddress}<br>
-Apt Number: ${UserInfo.aptNumber}<br>
-City: ${UserInfo.city}<br>
-State: ${UserInfo.state}<br>
-Zip Code: ${UserInfo.zipCode}<br>
-Email: ${UserInfo.email}<br>
-Sex: ${UserInfo.sex}<br>
-Interests: ${UserInfo.interests}<br><br>
+User ID: ${UserInfo.UserID}<br>
+First Name: ${UserInfo.FirstName}<br>
+Last Name: ${UserInfo.LastName}<br> 
+Password: ${UserInfo.Password}<br> 
+Street Address: ${UserInfo.StreetAddress}<br>
+Apt Number: ${UserInfo.AptNumber}<br>
+City: ${UserInfo.City}<br>
+State: ${UserInfo.State}<br>
+Zip Code: ${UserInfo.Zip}<br>
+Email: ${UserInfo.Email}<br>
+Sex: ${UserInfo.Sex}<br>
+Interests: ${UserInfo.Interests}<br><br>
 Cars:
 <table>
 	<tr>

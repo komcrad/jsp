@@ -2,6 +2,7 @@ package ninja.konrad.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.util.HashMap;
 
 import javax.servlet.ServletException;
@@ -32,12 +33,12 @@ public class login extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		if (Database.getUser(email) != null) {
-			HashMap<String, String> user = Database.getUser(email);
+		if (Database.getUserByEmail(email) != null) {
+			HashMap<String, String> user = Database.getUserByEmail(email);
 			//user.put("cars", Functions.getCarTableForUser(user));
-			HashMap<String, Car[]> cars =  new HashMap<String, Car[]>();
-			cars.put("cars", Cars.getInventory(Integer.parseInt(Database.getUser(email).get("userID"))));
-			if (user.get("password").equals(password)) {
+			HashMap<String, Object[]> cars =  new HashMap<String, Object[]>();
+			cars.put("cars", Cars.getInventory(Integer.parseInt(Database.getUserProperty(email, "UserID"))));
+			if (user.get("Password").equals(password)) {
 				HttpSession session = request.getSession(true);
 				session.setAttribute("UserInfo", user);
 				session.setAttribute("Cars", cars);

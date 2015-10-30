@@ -17,7 +17,7 @@ public class Functions {
 	
 	public static String getCarTableForUser(HashMap<String, String> user) {
 		int userID = Integer.parseInt(user.get("userID"));
-		Car[] cars = Cars.getInventory(userID);
+		Object[] cars = Cars.getInventory(userID);
 		String result = "<table>"
 						+ "<thead>"
 							+ "<tr>"
@@ -25,7 +25,7 @@ public class Functions {
 							+ "</tr>"
 						+ "</thead>";
 		for (int i = 0; i < cars.length;i++ ) {
-			Car car = cars[i];
+			Car car = (Car) cars[i];
 			result = result + "<tr>";
 			result = result + "<td>" + car.getMake() + "</td>";
 			result = result + "<td>" + car.getModel() + "</td>";
